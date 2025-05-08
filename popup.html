@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ContextBridge</title>
+        <link
+            rel="stylesheet"
+            href="popup.css"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <h3>ContextBridge</h3>
+            <div class="tab-info">
+                <strong>Current Tab:</strong>
+                <span id="currentUrl">Loading...</span>
+            </div>
+            <form id="contextForm">
+                <fieldset>
+                    <legend>Include:</legend>
+                    <div>
+                        <input
+                            type="radio"
+                            id="typeFull"
+                            name="contextType"
+                            value="Full page"
+                            checked
+                        /><label for="typeFull">Full page</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            id="typeSelection"
+                            name="contextType"
+                            value="Selection"
+                        /><label for="typeSelection">Selection</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            id="typeSummary"
+                            name="contextType"
+                            value="Summary"
+                        /><label for="typeSummary">Summary</label
+                        ><small
+                            id="summaryApiKeyWarning"
+                            class="warning-text"
+                            style="display: none"
+                        >
+                            (Requires API Key)</small
+                        >
+                    </div>
+                </fieldset>
+                <div>
+                    <label for="notes">Notes (optional):</label
+                    ><textarea
+                        id="notes"
+                        rows="3"
+                    ></textarea>
+                </div>
+                <div class="actions">
+                    <button
+                        type="submit"
+                        id="addToChatGPT"
+                    >
+                        ➕ Add to ChatGPT
+                    </button>
+                    <button
+                        type="button"
+                        id="settingsBtn"
+                    >
+                        ⚙️ Settings
+                    </button>
+                </div>
+            </form>
+            <div
+                id="statusMessage"
+                class="status"
+            ></div>
+        </div>
+        <script src="storage.js"></script>
+        <script src="popup.js"></script>
+    </body>
+</html>

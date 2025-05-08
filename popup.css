@@ -1,0 +1,101 @@
+body {
+    font-family: sans-serif;
+    width: 300px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+h3 {
+    margin: 0 0 10px 0;
+    color: #1a73e8;
+    text-align: center;
+}
+.tab-info {
+    font-size: 0.9em;
+    color: #555;
+    word-break: break-all;
+}
+.tab-info strong {
+    color: #333;
+}
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+}
+legend {
+    padding: 0 5px;
+    font-weight: bold;
+    color: #444;
+}
+textarea {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 50px;
+    font-family: inherit;
+}
+.actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+button[type='submit'] {
+    background-color: #1a73e8;
+    color: white;
+    flex-grow: 1;
+}
+button[type='submit']:hover {
+    background-color: #1558b3;
+}
+button[type='submit']:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+button#settingsBtn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+button#settingsBtn:hover {
+    background-color: #c7c7c7;
+}
+.status {
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    text-align: center;
+}
+.status.success {
+    background-color: #e6ffed;
+    color: #006421;
+    border: 1px solid #a3e0b8;
+}
+.status.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+.status.warning {
+    background-color: #fff8e1;
+    color: #ffa000;
+    border: 1px solid #ffecb3;
+}
+.warning-text {
+    font-size: 0.8em;
+    color: #f57c00;
+}

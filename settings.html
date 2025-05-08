@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ContextBridge Settings</title>
+        <link
+            rel="stylesheet"
+            href="settings.css"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <h2>ContextBridge Settings</h2>
+            <form id="settingsForm">
+                <div class="setting-item">
+                    <label for="autoOpenChatGPT"
+                        ><input
+                            type="checkbox"
+                            id="autoOpenChatGPT"
+                        />Auto-open ChatGPT tab</label
+                    >
+                </div>
+                <div class="setting-item">
+                    <label for="autoSubmit"
+                        ><input
+                            type="checkbox"
+                            id="autoSubmit"
+                        />Auto-submit after inject</label
+                    >
+                </div>
+                <div class="setting-item">
+                    <label for="summarizeWithApiKey"
+                        ><input
+                            type="checkbox"
+                            id="summarizeWithApiKey"
+                        />Enable page summarization</label
+                    >
+                </div>
+                <div
+                    class="setting-item dependent-setting"
+                    id="apiKeySection"
+                >
+                    <label for="openaiApiKey">OpenAI API Key:</label
+                    ><input
+                        type="password"
+                        id="openaiApiKey"
+                        placeholder="sk-..."
+                    /><small>Stored locally.</small>
+                </div>
+                <div class="setting-item">
+                    <label for="stripAdsScripts"
+                        ><input
+                            type="checkbox"
+                            id="stripAdsScripts"
+                        />Attempt to strip ads/scripts</label
+                    >
+                </div>
+                <div class="setting-item">
+                    <label for="persistContextHistory"
+                        ><input
+                            type="checkbox"
+                            id="persistContextHistory"
+                        />Persist context history</label
+                    >
+                </div>
+                <div
+                    class="setting-item dependent-setting"
+                    id="maxHistorySection"
+                >
+                    <label for="maxHistoryItems">Max history items:</label
+                    ><input
+                        type="number"
+                        id="maxHistoryItems"
+                        min="10"
+                        max="1000"
+                        step="10"
+                    />
+                </div>
+                <div class="setting-item">
+                    <label for="blockListDomains"
+                        >Blocklist domains (Regex):</label
+                    ><textarea
+                        id="blockListDomains"
+                        rows="2"
+                        placeholder="example\.com\|sub\.another\.net"
+                    ></textarea>
+                </div>
+                <button
+                    type="submit"
+                    id="saveSettingsBtn"
+                >
+                    Save Settings
+                </button>
+            </form>
+            <div
+                id="statusMessage"
+                class="status"
+            ></div>
+        </div>
+        <script src="storage.js"></script>
+        <script src="settings.js"></script>
+    </body>
+</html>

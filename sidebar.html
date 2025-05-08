@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Context History</title>
+        <meta charset="UTF-8" />
+        <link
+            rel="stylesheet"
+            href="sidebar.css"
+        />
+    </head>
+    <body>
+        <div class="sidebar-container">
+            <header>
+                <h3>Context History</h3>
+                <div class="actions-header">
+                    <input
+                        type="text"
+                        id="historySearch"
+                        placeholder="Search history..."
+                    /><button
+                        id="clearHistoryBtn"
+                        title="Clear All History"
+                    >
+                        🗑️ All
+                    </button>
+                </div>
+            </header>
+            <div
+                id="historyList"
+                class="history-list"
+            >
+                <p class="empty-message">No history yet.</p>
+            </div>
+            <footer><small>ContextBridge v1.0.0</small></footer>
+        </div>
+        <div
+            id="editModal"
+            class="modal"
+            style="display: none"
+        >
+            <div class="modal-content">
+                <span
+                    class="close-button"
+                    id="closeModalBtn"
+                    >×</span
+                >
+                <h4>Edit Notes</h4>
+                <input
+                    type="hidden"
+                    id="editHash"
+                /><textarea
+                    id="editNotesTextarea"
+                    rows="5"
+                ></textarea>
+                <button id="saveEditBtn">Save Notes</button>
+            </div>
+        </div>
+        <script src="sidebar_ui.js"></script>
+    </body>
+</html>
