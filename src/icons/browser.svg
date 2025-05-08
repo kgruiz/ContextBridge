@@ -1,0 +1,19 @@
+<svg viewBox="670 390 250 205" width="250" height="205" xmlns="http://www.w3.org/2000/svg">
+    <!-- Colors -->
+
+    <!-- Browser Window -->
+    <g id="browser_window">
+      <rect id="window_body" x="680" y="400" width="230" height="185" rx="15" ry="15" fill="#F3EADA"/>
+      <path id="window_header_shape" d="M680,415 C680,406.712 686.712,400 695,400 L895,400 C903.288,400 910,406.712 910,415 L910,445 L680,445 Z" fill="#E6E6E6"/>
+
+      <circle id="dot1" cx="705" cy="422.5" r="7" fill="#B8B8B8"/>
+      <circle id="dot2" cx="730" cy="422.5" r="7" fill="#B8B8B8"/>
+      <circle id="dot3" cx="755" cy="422.5" r="7" fill="#B8B8B8"/>
+
+      <rect id="content_image_placeholder" x="700" y="460" width="70" height="70" fill="#A2C1DA" rx="5" ry="5"/>
+      <rect id="content_line1" x="785" y="465" width="100" height="12" fill="#3C578F" rx="4" ry="4"/>
+      <rect id="content_line2" x="785" y="487" width="80" height="12" fill="#3C578F" rx="4" ry="4"/>
+      <rect id="content_line_bottom" x="700" y="545" width="120" height="12" fill="#3C578F" rx="4" ry="4"/>
+      <circle id="content_yellow_button" cx="855" cy="551" r="15" fill="#F7C544"/>
+    </g>
+  </svg>
