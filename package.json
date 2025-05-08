@@ -7,9 +7,7 @@
     {
         "start": "parcel watch --dist-dir extension_dist --public-url ./",
         "build": "parcel build --dist-dir extension_dist --public-url ./ --no-cache",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "lint": "eslint \"src/**/*.js\"",
-        "lint:fix": "eslint \"src/**/*.js\" --fix"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": 
     [
