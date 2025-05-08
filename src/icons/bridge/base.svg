@@ -10,4 +10,21 @@
     <path d="
       M12 26C18 28 39 2 50 9L50 9C43 7 25 30 12 26Z"
       fill="url(#blueGradient)" />
+
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="rgb(15,35,62)" />
+            <stop offset="100%" stop-color="rgb(18,41,74)" />
+          </linearGradient>
+        </defs>
+
+        <path d="
+          M49 9C43 7 25 30 12 26
+          L12 28C25 32 43 9 50 11
+          C50 11 53 12 55 15
+          L55 13Q53 9 49 9Z"
+          fill="url(#grad1)" />
+
+
+
   </svg>
