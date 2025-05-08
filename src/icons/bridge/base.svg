@@ -1,0 +1,11 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path d="
+      M29 156
+      C83 121, 79 94, 102 82
+      S142 119, 154 125
+      L154 125
+      S142 119, 102 82
+      C79 94, 83 121, 28 156
+      Z"
+      fill="#1f3e6e" stroke="none"/>
+  </svg>
