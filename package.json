@@ -7,7 +7,9 @@
     {
         "start": "parcel watch --dist-dir extension_dist --public-url ./",
         "build": "parcel build --dist-dir extension_dist --public-url ./ --no-cache",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint \"src/**/*.js\"",
+        "lint:fix": "eslint \"src/**/*.js\" --fix"
     },
     "keywords": 
     [
@@ -23,6 +25,11 @@
     },
     "devDependencies": 
     {
-        "parcel": "^2.14.4"
+        "eslint": "^9.26.0",
+        "eslint-config-prettier": "^10.1.3",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-prettier": "^5.4.0",
+        "parcel": "^2.14.4",
+        "prettier": "^3.5.3"
     }
 }
