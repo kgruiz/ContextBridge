@@ -1,11 +1,13 @@
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="rgb(28, 68, 115)" />
+        <stop offset="50%" stop-color="rgb(23, 53, 90)" />
+        <stop offset="100%" stop-color="rgb(28, 68, 115)" />
+      </linearGradient>
+    </defs>
+
     <path d="
-      M29 156
-      C83 121, 79 94, 102 82
-      S142 119, 154 125
-      L154 125
-      S142 119, 102 82
-      C79 94, 83 121, 28 156
-      Z"
-      fill="#1f3e6e" stroke="none"/>
+      M12 26C18 28 39 2 50 9L50 9C43 7 25 30 12 26Z"
+      fill="url(#blueGradient)" />
   </svg>
