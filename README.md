@@ -29,27 +29,50 @@ With ContextBridge, you can quickly provide ChatGPT with the necessary backgroun
   * Provides clear feedback for common issues (e.g., ChatGPT login required, UI changes).
   * Fallback to copying context to clipboard if direct injection fails.
 * **Security & Privacy Focused:**
-  * All user data (settings, history, API key) is stored locally using `chrome.storage.local`.
+  * All user data (settings, history, API key) is stored locally within your Chrome browser's profile storage (`chrome.storage.local`).
   * No telemetry or external data collection by the extension itself (OpenAI API calls for summarization are user-initiated and direct).
   * Uses DOMPurify for sanitizing HTML content during extraction.
 
 ## Installation
 
-1. **Download the Extension:**
-    * Clone the repository: `git clone https://github.com/kgruiz/ContextBridge.git`
-    * Alternatively, download the source code as a ZIP file from [https://github.com/kgruiz/ContextBridge](https://github.com/kgruiz/ContextBridge) and extract it.
-    * Ensure you have the following external libraries in the root directory of the extension (these are typically included or you may need to download them separately if not bundled):
-        * `readability.js` (from Mozilla)
-        * `turndown.js`
-        * `dompurify.js`
+1. **Prerequisites:**
+    * Node.js and PNPM: Ensure you have Node.js installed. Then, install PNPM globally if you haven't already (e.g., `npm install -g pnpm`).
 
-2. **Load in Chrome:**
+2. **Clone the Repository:**
+
+    ```bash
+    git clone https://github.com/kgruiz/ContextBridge.git
+    cd ContextBridge
+    ```
+
+3. **Install Dependencies:**
+
+    ```bash
+    pnpm install
+    ```
+
+4. **Build the Extension:**
+    * For development (with live reloading):
+
+        ```bash
+        pnpm start
+        ```
+
+    * For a production build:
+
+        ```bash
+        pnpm build
+        ```
+
+    This will create an `extension_dist` folder in your project directory.
+
+5. **Load in Chrome:**
     * Open Google Chrome and navigate to `chrome://extensions/`.
     * Enable "Developer mode" using the toggle switch (usually in the top-right corner).
     * Click the "Load unpacked" button.
-    * Select the directory where you cloned/extracted the ContextBridge extension files.
+    * Select the `extension_dist` folder (created in the previous step) from your `ContextBridge` project directory.
 
-3. **Verify Installation:**
+6. **Verify Installation:**
     * The ContextBridge icon should appear in your Chrome toolbar.
     * You can now start using the extension.
 
@@ -85,7 +108,7 @@ With ContextBridge, you can quickly provide ChatGPT with the necessary backgroun
   * `Auto-open ChatGPT tab`: If a ChatGPT tab isn't found, create one.
   * `Auto-submit after inject`: Automatically press "Send" in ChatGPT after context is added.
   * `Enable page summarization`: Activates the summary feature.
-  * `OpenAI API Key`: Your personal key for the summarization feature.
+  * `OpenAI API Key`: Your personal key for the summarization feature. Stored securely in your local Chrome profile storage. Be mindful of your computer and Chrome profile security.
   * `Attempt to strip ads/scripts`: Use Readability.js to clean content.
   * `Persist context history`: Save history across browser sessions.
   * `Max history items`: Control the size of the stored history.
@@ -96,7 +119,23 @@ With ContextBridge, you can quickly provide ChatGPT with the necessary backgroun
 * **Manifest Version:** 3
 * **Permissions:** `tabs`, `activeTab`, `scripting`, `storage`
 * **Host Permissions:** `https://chat.openai.com/*`, `https://api.openai.com/*`, `<all_urls>`
-* **Key Libraries:** Readability.js, Turndown.js, DOMPurify.js
+* **Bundler:** Parcel
+
+## Dependencies & Acknowledgements
+
+This project utilizes the following open-source libraries:
+
+* **Readability.js:** By Mozilla. Used for extracting the primary readable content from web pages.
+  * Source: [https://github.com/mozilla/readability](https://github.com/mozilla/readability)
+  * License: Apache License 2.0
+* **Turndown.js:** By Dom Christie / Mixmax. Used for converting HTML content to Markdown.
+  * Source: [https://github.com/mixmark-io/turndown](https://github.com/mixmark-io/turndown)
+  * License: MIT License
+* **DOMPurify:** By Cure53. Used for sanitizing HTML to prevent XSS vulnerabilities.
+  * Source: [https://github.com/cure53/DOMPurify](https://github.com/cure53/DOMPurify)
+  * License: Mozilla Public License 2.0 or Apache License 2.0 (Dual Licensed)
+
+I are grateful to the authors and maintainers of these projects.
 
 ## Known Limitations & Considerations
 
