@@ -1,27 +1,11 @@
-<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
-    <!--
-    Color Palette (approximated from image):
-    - Red for arch/pillars: #C0392B (or a bit darker like #A93226)
-    - Darker Blue for deck underside/shadow: #2A3B4D
-    - Lighter Blue for deck top surface: #4A6A8A
-    -->
-
-    <!-- Blue Deck - Underside/Depth (drawn first to be underneath) -->
-    <path d="M0,150 Q175,90 350,130 L350,145 Q175,105 0,165 Z" fill="#2A3B4D"/>
-
-    <!-- Blue Deck - Top Surface -->
-    <path d="M0,135 Q175,75 350,115 L350,130 Q175,90 0,150 Z" fill="#4A6A8A"/>
-
-    <!-- Red Pillars -->
-    <!-- Left Pillar: Positioned to appear to support the arch and rest on/pass through the deck -->
-    <!-- y value is top of pillar, height extends downwards -->
-    <rect x="100" y="85" width="25" height="65" fill="#A93226"/>
-    <!-- Right Pillar -->
-    <rect x="225" y="70" width="25" height="60" fill="#A93226"/>
-
-    <!-- Red Arch (drawn last to be on top of pillars) -->
-    <!-- Path defines the outer curve, then moves to inner curve start, then inner curve, then closes -->
-    <!-- M outer-start Q control outer-end L inner-end Q control inner-start Z -->
-    <path d="M40,145 Q180,15 320,95 L310,105 Q180,35 50,155 Z" fill="#A93226"/>
-
-  </svg>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="100%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#650e0d"/>
+      <stop offset="50%" stop-color="#720e0e"/>
+      <stop offset="100%" stop-color="#650e0d"/>
+    </linearGradient>
+  </defs>
+  <path d="M29 156C83 121 79 94 102 82S142 119 154 125"
+        fill="none" stroke="url(#grad)" stroke-width="4"/>
+</svg>
