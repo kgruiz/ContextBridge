@@ -1,3 +1,5 @@
+import { getSettings /* etc. */ } from './storage.js';
+
 document.addEventListener('DOMContentLoaded', async () => {
     const form = document.getElementById('contextForm');
     const addBtn = document.getElementById('addToChatGPT');

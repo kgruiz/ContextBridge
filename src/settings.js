@@ -1,3 +1,5 @@
+import { getSettings, saveSettings /* etc. */ } from './storage.js';
+
 document.addEventListener('DOMContentLoaded', async () => {
     const form = document.getElementById('settingsForm');
     const autoOpenCb = document.getElementById('autoOpenChatGPT');

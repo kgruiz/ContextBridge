@@ -1,0 +1,28 @@
+{
+    "name": "context-bridge",
+    "version": "1.0.0",
+    "description": "Push any web page or selection into a ChatGPT chat as structured context.",
+    "source": "src/manifest.json",
+    "scripts": 
+    {
+        "start": "parcel watch --dist-dir extension_dist --public-url ./",
+        "build": "parcel build --dist-dir extension_dist --public-url ./ --no-cache",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": 
+    [
+    ],
+    "author": "",
+    "license": "GPL-3.0-or-later",
+    "packageManager": "pnpm@10.10.0",
+    "dependencies": 
+    {
+        "@mozilla/readability": "^0.6.0",
+        "dompurify": "^3.2.5",
+        "turndown": "^7.2.0"
+    },
+    "devDependencies": 
+    {
+        "parcel": "^2.14.4"
+    }
+}

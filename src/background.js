@@ -1,13 +1,16 @@
-try {
-    importScripts(
-        'turndown.js',
-        'readability.js',
-        'dompurify.js',
-        'storage.js'
-    );
-} catch (e) {
-    console.error('Failed to import scripts:', e);
-}
+import DOMPurify from 'dompurify';
+import TurndownService from 'turndown';
+import { Readability } from '@mozilla/readability';
+import {
+    getSettings,
+    saveSettings,
+    getContextHistory,
+    saveContextHistory,
+    addContextToHistory,
+    updateContextInHistory,
+    deleteContextFromHistory,
+    clearHistory,
+} from './storage.js';
 
 const MAX_PAYLOAD_CHARS = 5000;
 const MAX_EXTRACTION_SIZE_BYTES = 5 * 1024 * 1024;

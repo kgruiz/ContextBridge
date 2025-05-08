@@ -1,3 +1,5 @@
+import DOMPurify from 'dompurify';
+
 let sidebarVisible = false;
 let sidebarIframe = null;
 let lastInjectedPayload = '';

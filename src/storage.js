@@ -12,22 +12,22 @@ const DEFAULT_SETTINGS = {
 const CONTEXT_HISTORY_KEY = 'contextHistory';
 const SETTINGS_KEY = 'contextBridgeSettings';
 
-async function getSettings() {
+export async function getSettings() {
     const data = await chrome.storage.local.get(SETTINGS_KEY);
     return { ...DEFAULT_SETTINGS, ...(data[SETTINGS_KEY] || {}) };
 }
 
-async function saveSettings(settings) {
+export async function saveSettings(settings) {
     await chrome.storage.local.set({ [SETTINGS_KEY]: settings });
 }
 
-async function getContextHistory() {
+export async function getContextHistory() {
     if (!(await getSettings()).persistContextHistory) return [];
     const data = await chrome.storage.local.get(CONTEXT_HISTORY_KEY);
     return data[CONTEXT_HISTORY_KEY] || [];
 }
 
-async function saveContextHistory(history) {
+export async function saveContextHistory(history) {
     const settings = await getSettings();
     if (!settings.persistContextHistory) {
         await chrome.storage.local.remove(CONTEXT_HISTORY_KEY);
@@ -37,7 +37,7 @@ async function saveContextHistory(history) {
     await chrome.storage.local.set({ [CONTEXT_HISTORY_KEY]: limitedHistory });
 }
 
-async function addContextToHistory(item) {
+export async function addContextToHistory(item) {
     const settings = await getSettings();
     if (!settings.persistContextHistory) return;
 
@@ -64,7 +64,7 @@ async function addContextToHistory(item) {
     await saveContextHistory(history);
 }
 
-async function updateContextInHistory(hash, updates) {
+export async function updateContextInHistory(hash, updates) {
     let history = await getContextHistory();
     const itemIndex = history.findIndex((item) => item.hash === hash);
     if (itemIndex > -1) {
@@ -79,13 +79,13 @@ async function updateContextInHistory(hash, updates) {
     return false;
 }
 
-async function deleteContextFromHistory(hash) {
+export async function deleteContextFromHistory(hash) {
     let history = await getContextHistory();
     history = history.filter((item) => item.hash !== hash);
     await saveContextHistory(history);
 }
 
-async function clearHistory() {
+export async function clearHistory() {
     await saveContextHistory([]);
 }
 
